@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "question_units",
+  "info": {
+    "singularName": "question-unit",
+    "pluralName": "question-units",
+    "displayName": "QuestionUnit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "memo": {
+      "type": "text"
+    }
+  }
+}
