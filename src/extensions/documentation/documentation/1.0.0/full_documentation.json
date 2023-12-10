@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-10T02:12:53.943Z"
+    "x-generation-date": "2023-12-10T15:03:09.995Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -331,6 +331,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "category": {
+                                                  "type": "string"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -878,6 +881,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "category": {
+                "type": "string"
               }
             }
           }
@@ -1044,6 +1050,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "category": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -1474,6 +1483,9 @@
               }
             }
           },
+          "category": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1752,6 +1764,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "category": {
+                                                  "type": "string"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",

@@ -24,6 +24,10 @@
       "relation": "oneToMany",
       "target": "api::section.section",
       "mappedBy": "question_unit"
+    },
+    "category": {
+      "type": "string",
+      "required": false
     }
   }
 }

@@ -438,6 +438,7 @@ export interface ApiQuestionUnitQuestionUnit extends Schema.CollectionType {
       'oneToMany',
       'api::section.section'
     >;
+    category: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
