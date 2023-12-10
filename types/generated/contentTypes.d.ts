@@ -362,31 +362,56 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
+export interface ApiQuestionQuestion extends Schema.CollectionType {
+  collectionName: 'questions';
   info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'product';
+    singularName: 'question';
+    pluralName: 'questions';
+    displayName: 'Question';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    img: Attribute.Media;
+    question_text: Attribute.RichText &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u672A\u8A2D\u5B9A'>;
+    explanation_text: Attribute.RichText &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u672A\u8A2D\u5B9A\uFF08\u89E3\u8AAC\u6587\uFF09'>;
+    answer_text_1: Attribute.RichText & Attribute.Required;
+    answer_text_2: Attribute.RichText & Attribute.Required;
+    answer_text_3: Attribute.RichText & Attribute.Required;
+    answer_text_4: Attribute.RichText & Attribute.Required;
+    answer_number: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 0;
+        max: 3;
+      }> &
+      Attribute.DefaultTo<0>;
+    section: Attribute.Relation<
+      'api::question.question',
+      'manyToOne',
+      'api::section.section'
+    >;
+    question_unit: Attribute.Relation<
+      'api::question.question',
+      'oneToOne',
+      'api::question-unit.question-unit'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::product.product',
+      'api::question.question',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::product.product',
+      'api::question.question',
       'oneToOne',
       'admin::user'
     > &
@@ -406,8 +431,13 @@ export interface ApiQuestionUnitQuestionUnit extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
+    name: Attribute.String & Attribute.Required;
     memo: Attribute.Text;
+    sections: Attribute.Relation<
+      'api::question-unit.question-unit',
+      'oneToMany',
+      'api::section.section'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -419,6 +449,47 @@ export interface ApiQuestionUnitQuestionUnit extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::question-unit.question-unit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSectionSection extends Schema.CollectionType {
+  collectionName: 'sections';
+  info: {
+    singularName: 'section';
+    pluralName: 'sections';
+    displayName: 'Section';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    questions: Attribute.Relation<
+      'api::section.section',
+      'oneToMany',
+      'api::question.question'
+    >;
+    name: Attribute.String & Attribute.Required;
+    question_unit: Attribute.Relation<
+      'api::section.section',
+      'manyToOne',
+      'api::question-unit.question-unit'
+    >;
+    display_name: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section.section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section.section',
       'oneToOne',
       'admin::user'
     > &
@@ -751,8 +822,9 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::product.product': ApiProductProduct;
+      'api::question.question': ApiQuestionQuestion;
       'api::question-unit.question-unit': ApiQuestionUnitQuestionUnit;
+      'api::section.section': ApiSectionSection;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;

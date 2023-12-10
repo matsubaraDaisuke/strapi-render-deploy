@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "section"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "question_unit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question-unit.question-unit",
+      "inversedBy": "sections"
+    },
+    "display_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

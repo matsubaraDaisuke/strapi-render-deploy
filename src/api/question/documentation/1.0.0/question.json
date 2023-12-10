@@ -1,5 +1,5 @@
 {
-  "/products": {
+  "/questions": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductListResponse"
+                "$ref": "#/components/schemas/QuestionListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Product"
+        "Question"
       ],
       "parameters": [
         {
@@ -169,7 +169,7 @@
           }
         }
       ],
-      "operationId": "get/products"
+      "operationId": "get/questions"
     },
     "post": {
       "responses": {
@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductResponse"
+                "$ref": "#/components/schemas/QuestionResponse"
               }
             }
           }
@@ -235,23 +235,23 @@
         }
       },
       "tags": [
-        "Product"
+        "Question"
       ],
       "parameters": [],
-      "operationId": "post/products",
+      "operationId": "post/questions",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ProductRequest"
+              "$ref": "#/components/schemas/QuestionRequest"
             }
           }
         }
       }
     }
   },
-  "/products/{id}": {
+  "/questions/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -259,7 +259,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductResponse"
+                "$ref": "#/components/schemas/QuestionResponse"
               }
             }
           }
@@ -316,7 +316,7 @@
         }
       },
       "tags": [
-        "Product"
+        "Question"
       ],
       "parameters": [
         {
@@ -330,7 +330,7 @@
           }
         }
       ],
-      "operationId": "get/products/{id}"
+      "operationId": "get/questions/{id}"
     },
     "put": {
       "responses": {
@@ -339,7 +339,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductResponse"
+                "$ref": "#/components/schemas/QuestionResponse"
               }
             }
           }
@@ -396,7 +396,7 @@
         }
       },
       "tags": [
-        "Product"
+        "Question"
       ],
       "parameters": [
         {
@@ -410,13 +410,13 @@
           }
         }
       ],
-      "operationId": "put/products/{id}",
+      "operationId": "put/questions/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ProductRequest"
+              "$ref": "#/components/schemas/QuestionRequest"
             }
           }
         }
@@ -487,7 +487,7 @@
         }
       },
       "tags": [
-        "Product"
+        "Question"
       ],
       "parameters": [
         {
@@ -501,7 +501,7 @@
           }
         }
       ],
-      "operationId": "delete/products/{id}"
+      "operationId": "delete/questions/{id}"
     }
   }
 }

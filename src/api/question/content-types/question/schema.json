@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "singularName": "question",
+    "pluralName": "questions",
+    "displayName": "Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question_text": {
+      "type": "richtext",
+      "default": "未設定",
+      "required": true
+    },
+    "explanation_text": {
+      "type": "richtext",
+      "default": "未設定（解説文）",
+      "required": true
+    },
+    "answer_text_1": {
+      "type": "richtext",
+      "required": true
+    },
+    "answer_text_2": {
+      "type": "richtext",
+      "required": true
+    },
+    "answer_text_3": {
+      "type": "richtext",
+      "required": true
+    },
+    "answer_text_4": {
+      "type": "richtext",
+      "required": true
+    },
+    "answer_number": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "max": 3,
+      "min": 0
+    },
+    "section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::section.section",
+      "inversedBy": "questions"
+    },
+    "question_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question-unit.question-unit"
+    }
+  }
+}
