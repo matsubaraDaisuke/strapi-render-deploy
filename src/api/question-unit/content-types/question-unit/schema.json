@@ -27,7 +27,7 @@
     },
     "category": {
       "type": "string",
-      "required": false
+      "required": true
     }
   }
 }

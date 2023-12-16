@@ -388,7 +388,7 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetMinMax<{
         min: 0;
-        max: 3;
+        max: 4;
       }> &
       Attribute.DefaultTo<0>;
     section: Attribute.Relation<
@@ -438,7 +438,7 @@ export interface ApiQuestionUnitQuestionUnit extends Schema.CollectionType {
       'oneToMany',
       'api::section.section'
     >;
-    category: Attribute.String;
+    category: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
