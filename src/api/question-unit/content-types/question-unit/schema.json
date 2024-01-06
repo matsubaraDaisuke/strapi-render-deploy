@@ -28,6 +28,12 @@
     "category": {
       "type": "string",
       "required": true
+    },
+    "app": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::app.app",
+      "inversedBy": "question_units"
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apps",
+  "info": {
+    "singularName": "app",
+    "pluralName": "apps",
+    "displayName": "App",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "display_title": {
+      "type": "string",
+      "required": true
+    },
+    "question_units": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question-unit.question-unit",
+      "mappedBy": "app"
+    }
+  }
+}
