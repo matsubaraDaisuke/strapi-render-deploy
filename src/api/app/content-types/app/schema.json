@@ -25,6 +25,12 @@
       "relation": "oneToMany",
       "target": "api::question-unit.question-unit",
       "mappedBy": "app"
+    },
+    "ios_minimum_version": {
+      "type": "string"
+    },
+    "android_minimum_version": {
+      "type": "string"
     }
   }
 }

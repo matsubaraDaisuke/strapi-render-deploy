@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-01-06T10:23:21.412Z"
+    "x-generation-date": "2024-01-07T07:07:03.869Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -118,6 +118,12 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "ios_minimum_version": {
+                "type": "string"
+              },
+              "android_minimum_version": {
+                "type": "string"
               }
             }
           }
@@ -703,6 +709,12 @@
                                         }
                                       }
                                     },
+                                    "ios_minimum_version": {
+                                      "type": "string"
+                                    },
+                                    "android_minimum_version": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -803,6 +815,12 @@
                 }
               }
             }
+          },
+          "ios_minimum_version": {
+            "type": "string"
+          },
+          "android_minimum_version": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -1156,6 +1174,12 @@
                                                                   }
                                                                 }
                                                               }
+                                                            },
+                                                            "ios_minimum_version": {
+                                                              "type": "string"
+                                                            },
+                                                            "android_minimum_version": {
+                                                              "type": "string"
                                                             },
                                                             "createdAt": {
                                                               "type": "string",
@@ -1975,6 +1999,12 @@
                                                                   }
                                                                 }
                                                               },
+                                                              "ios_minimum_version": {
+                                                                "type": "string"
+                                                              },
+                                                              "android_minimum_version": {
+                                                                "type": "string"
+                                                              },
                                                               "createdAt": {
                                                                 "type": "string",
                                                                 "format": "date-time"
@@ -2791,6 +2821,12 @@
                                                                   }
                                                                 }
                                                               }
+                                                            },
+                                                            "ios_minimum_version": {
+                                                              "type": "string"
+                                                            },
+                                                            "android_minimum_version": {
+                                                              "type": "string"
                                                             },
                                                             "createdAt": {
                                                               "type": "string",
